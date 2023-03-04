@@ -19,8 +19,12 @@ MEASURES:
 measure entry:
 	0x20 bytes for title
 	0x01 byte for metronome change (0 if none)
-	0x01 byte for time signature change (0 if none)
+	0x02 bytes for time signature change (0x0000 if none. first byte is the number of notes, second byte their value)
 	0x04 bytes pointer to the list of notes
-	0x0A null bytes
+	0x09 null bytes
 
 notes list:
+	0x01 byte for the string
+	0x01 byte for the fret
+	0x01 bytes for the beginning (relative to the beginning of the measure, in 64ths)
+	0x02 bytes for duration (as a time signature)
