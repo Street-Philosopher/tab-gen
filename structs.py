@@ -67,8 +67,8 @@ class measure:
 	meter: timevalue | None		# the time signature
 	metronome:   int | None		# the number of 4th notes per minute
 
-	def __init__(self, title: str = None, meter: timevalue = None, metronome: int = None) -> None:
-		self.notes = []
+	def __init__(self, title: str = None, meter: timevalue = None, metronome: int = None, notes: list[note] = []) -> None:
+		self.notes = notes
 		
 		self.title = title
 		
@@ -77,7 +77,7 @@ class measure:
 #END
 
 class song:
-	name:   str
+	title:   str
 	author: str
 
 	tuning: list[int]
@@ -85,5 +85,5 @@ class song:
 	measures: list[measure]
 
 	def __init__(self, name: str, author: str, tuning: list[int], measures: list[measure]) -> None:
-		self.name, self.author, self.tuning, self.measures = name, author, tuning, measures
+		self.title, self.author, self.tuning, self.measures = name, author, tuning, measures
 #END

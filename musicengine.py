@@ -180,6 +180,5 @@ def PlaySong(song: song):
 # w.set_volume(-100)
 # sleep(10)
 
-from testsongs import bonjovi
-PlaySong(bonjovi)
-exit()
+from testsongs import *
+PlaySong(sixteenth)

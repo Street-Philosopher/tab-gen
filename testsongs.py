@@ -33,3 +33,18 @@ bonjovi = song (
     author = "Bon Jovi",
     tuning = BASS_STANDARD_TUNE_4
 )
+
+notes1 = [note(fret=0, string=1, beginning=timevalue(i, 8)) for i in range(8)]
+eighth = song(
+    name="",
+    author="",
+    tuning=BASS_STANDARD_TUNE_4,
+    measures = [ measure(metronome=120, meter=timevalue.common_time(), notes=notes1) for i in range(4) ]
+)
+notes2 = [note(fret=0, string=1, beginning=timevalue(i, 16)) for i in range(16)]
+sixteenth = song(
+    name="",
+    author="",
+    tuning=BASS_STANDARD_TUNE_4,
+    measures = [ measure(metronome=120, meter=timevalue.common_time(), notes=notes2) for i in range(4) ]
+)
