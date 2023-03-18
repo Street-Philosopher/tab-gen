@@ -1,3 +1,5 @@
+all values are big endian unless stated otherwise
+
 HEADER:
 0x00-0x02:	"TAB"
 0x03:		tab file version
@@ -22,9 +24,17 @@ measure entry:
 	0x02 bytes for time signature change (0x0000 if none. first byte is the number of notes, second byte their value)
 	0x04 bytes pointer to the list of notes
 	0x09 null bytes
+(total size: 0x30 bytes)
 
 notes list:
+	0x01 byte for length
+	0x0F zero-padding
+	note entries
+(total size: 0x10 bytes + note entries)
+note entries:
 	0x01 byte for the string
 	0x01 byte for the fret
-	0x01 bytes for the beginning (relative to the beginning of the measure, in 64ths)
+	0x02 bytes for the beginning (relative to the beginning of the measure, as a time signature)
 	0x02 bytes for duration (as a time signature)
+	0x0B zero-padding
+(total size: 0x10 bytes)

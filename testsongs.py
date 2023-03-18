@@ -2,7 +2,7 @@
 from constants import BASS_STANDARD_TUNE_4
 from structs import *
 
-riff = measure(metronome=120, meter=timevalue.common_time())
+riff = measure(metronome=120, meter=timevalue.common_time(), title="riff")
 riff.notes = [
     note(fret=0, string=1, beginning=timevalue(0, 8)),
     note(fret=7, string=2, beginning=timevalue(1, 8)),
@@ -13,7 +13,7 @@ riff.notes = [
     note(fret=7, string=1, beginning=timevalue(6, 8)),
     note(fret=5, string=2, beginning=timevalue(7, 8)),
 ]
-variation = measure(metronome=120, meter=timevalue.common_time())
+variation = measure(metronome=120, meter=None, title="variation")
 variation.notes = [
     note(fret=0, string=1, beginning=timevalue(0, 8)),
     note(fret=7, string=2, beginning=timevalue(1, 8)),
