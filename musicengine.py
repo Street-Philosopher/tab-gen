@@ -116,7 +116,7 @@ class music_player:
 				# check for each note being played if we need to stop it
 				elif wave["end"] is not None and current_time_cycle >= wave["end"]:
 					end_note(wave_id, wave)
-			del(wave, wave_id)
+			# del(wave, wave_id)
 
 			# remove based on the ID from ALL lists that contain the notes or anything similar
 			for wave_id in scheduled_to_remove:
@@ -180,5 +180,3 @@ def PlaySong(song: song):
 # w.set_volume(-100)
 # sleep(10)
 
-from testsongs import *
-PlaySong(sixteenth)
